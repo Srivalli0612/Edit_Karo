@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwQyVs0yOWuAo4V2Q2eClSR0VtRusg7S4xTlpATdWCS_aGekK9r8NJ-dXBMg6oJyEn1/exec';
+/*const scriptURL = 'https://script.google.com/macros/s/AKfycbwQyVs0yOWuAo4V2Q2eClSR0VtRusg7S4xTlpATdWCS_aGekK9r8NJ-dXBMg6oJyEn1/exec';
 
 document.getElementById('contactForm').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -6,7 +6,6 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
   const formData = {
     name: document.getElementById('name').value,
     email: document.getElementById('email').value,
-    phone: document.getElementById('phone').value,
     message: document.getElementById('message').value
   };
 
@@ -24,4 +23,4 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
     console.error('Error!', error);
     alert('There was an error submitting your message.');
   });
-});
+});*/
