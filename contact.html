@@ -20,17 +20,17 @@
 
   <div class="container">
     <h1>Contact Us</h1>
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <input type="tel" id="phone" placeholder="Your Phone Number" required>
-      <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+     <form name="contact" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="contact">
+  <p><label>Name: <input type="text" name="name" required></label></p>
+  <p><label>Email: <input type="email" name="email" required></label></p>
+  <p><label>Message: <textarea name="message" required></textarea></label></p>
+  <p><button type="submit">Send</button></p>
+</form>
     <p id="formMessage"></p>
   </div>
 
-  <!-- Link your JS file for contact form -->
   <script src="js/contactForm.js"></script>
 </body>
 </html>
+
