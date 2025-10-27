@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwQyVs0yOWuAo4V2Q2eClSR0VtRusg7S4xTlpATdWCS_aGekK9r8NJ-dXBMg6oJyEn1/exec'; // your exact URL
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwQyVs0yOWuAo4V2Q2eClSR0VtRusg7S4xTlpATdWCS_aGekK9r8NJ-dXBMg6oJyEn1/exec';
 
 document.getElementById('contactForm').addEventListener('submit', (e) => {
   e.preventDefault();
