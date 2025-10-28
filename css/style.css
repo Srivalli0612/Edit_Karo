@@ -177,3 +177,9 @@ body {
   font-size: 0.9rem;
   color: #aaa;
 }
+
+.nav-links li a.active {
+  text-decoration: underline;
+  color: #ffeaea;
+}
+
