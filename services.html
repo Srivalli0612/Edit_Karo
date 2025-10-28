@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | EditKaro.in</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .services-container {
+      max-width: 1100px;
+      margin: 60px auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .services-container h1 {
+      color: #ff4d4d;
+      margin-bottom: 10px;
+    }
+
+    .services-container p {
+      color: #555;
+      font-size: 17px;
+      margin-bottom: 40px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      transition: 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .services-container {
+        margin: 30px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <h2 class="logo">EditKaro.in</h2>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Services Section -->
+  <section class="services-container">
+    <h1>Our <span style="color:#333;">Services</span></h1>
+    <p>We offer a complete range of creative and digital solutions tailored to your brand’s needs.</p>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <img src="images/video-edit.png" alt="Video Editing">
+        <h3>Video Editing</h3>
+        <p>Professional editing for YouTube, Reels, Ads, and more — with seamless transitions, effects, and color correction.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="images/social-media.png" alt="Social Media Management">
+        <h3>Social Media Marketing</h3>
+        <p>Grow your brand with impactful posts, ad campaigns, and creative strategies that engage your audience.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="images/graphic-design.png" alt="Graphic Design">
+        <h3>Graphic Design</h3>
+        <p>Modern and minimal designs for posters, thumbnails, and social media — built to capture attention instantly.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="images/ad-edit.png" alt="Advertisement Edits">
+        <h3>Advertisement Edits</h3>
+        <p>Eye-catching ad videos designed to boost conversions and attract viewers effectively.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="images/documentary.png" alt="Documentary Style">
+        <h3>Documentary Style</h3>
+        <p>Story-driven edits with cinematic visuals and professional sound to bring your narrative to life.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="images/anime.png" alt="Anime Edits">
+        <h3>Anime & Aesthetic Edits</h3>
+        <p>Stylized anime and aesthetic videos with smooth effects and color grading that fans love.</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
