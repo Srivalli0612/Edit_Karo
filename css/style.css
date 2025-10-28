@@ -1,3 +1,23 @@
+/* Prevent navbar shifting between pages */
+html {
+  overflow-y: scroll;
+}
+
+/* Reset defaults and keep layout consistent */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0b0b0b;
+  color: #fff;
+}
+
 
 * {
   margin: 0;
