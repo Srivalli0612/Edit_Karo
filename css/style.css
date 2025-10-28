@@ -18,6 +18,36 @@ body {
   color: #fff;
 }
 
+header {
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  border-bottom: 2px solid #ff4d4d;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 28px;
+  color: #ff4d4d;
+}
+
+nav a {
+  color: #bbb;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ff4d4d;
+}
+s
 
 * {
   margin: 0;
