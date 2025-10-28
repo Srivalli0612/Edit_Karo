@@ -4,7 +4,189 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Editkaro.in</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0b0b0b;
+      color: #fff;
+    }
+
+    header {
+      background: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      border-bottom: 2px solid #ff4d4d;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #ff4d4d;
+    }
+
+    nav a {
+      color: #bbb;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff4d4d;
+    }
+
+    .portfolio-section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .portfolio-section h2 {
+      font-size: 36px;
+      color: #ff4d4d;
+      margin-bottom: 10px;
+    }
+
+    .portfolio-section h2 span {
+      color: #fff;
+    }
+
+    .portfolio-section p {
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      padding: 10px 18px;
+      border: none;
+      background: #1a1a1a;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: #ff4d4d;
+      color: #fff;
+    }
+
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .video-card {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: scale(1.03);
+    }
+
+    .video-card video {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .video-card:hover .overlay {
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #bbb;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    /* Popup styling */
+    .video-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .video-popup.active {
+      display: flex;
+    }
+
+    .video-popup-content {
+      position: relative;
+      width: 80%;
+      max-width: 900px;
+    }
+
+    .video-popup-content video {
+      width: 100%;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    .close-popup {
+      position: absolute;
+      top: -35px;
+      right: -10px;
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    .close-popup:hover {
+      color: #ff4d4d;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,111 +204,108 @@
     <p>Explore our diverse works — from short reels to cinematic edits.</p>
 
     <div class="filter-buttons">
-    <button class="filter-btn active" data-category="all">All</button>
-    <button class="filter-btn" data-category="short">Short-form</button>
-    <button class="filter-btn" data-category="long">Long-form</button>
-    <button class="filter-btn" data-category="gaming">Gaming</button>
-    <button class="filter-btn" data-category="football">Football</button>
-    <button class="filter-btn" data-category="color">Color Grading</button>
-    <button class="filter-btn" data-category="anime">Anime</button>
-    <button class="filter-btn" data-category="ads">E-commerce Ads</button>
-  </div>
-
-    <div class="video-gallery">
-    <div class="video-card" data-category="short">
-      <video src="videos/short form video.mp4" muted loop></video>
-      <div class="overlay"><h3>Short Form Edit</h3></div>
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="short">Short-form</button>
+      <button class="filter-btn" data-category="long">Long-form</button>
+      <button class="filter-btn" data-category="gaming">Gaming</button>
+      <button class="filter-btn" data-category="football">Football</button>
+      <button class="filter-btn" data-category="color">Color Grading</button>
+      <button class="filter-btn" data-category="anime">Anime</button>
+      <button class="filter-btn" data-category="ads">E-commerce Ads</button>
     </div>
 
     <div class="video-gallery">
-    <div class="video-card" data-category="long">
-      <video src="videos/long form video.mp4" muted loop></video>
-      <div class="overlay"><h3>Long Form Edit</h3></div>
-    </div>
+      <div class="video-card" data-category="short">
+        <video src="videos/short form video.mp4" muted loop></video>
+        <div class="overlay"><h3>Short Form Edit</h3></div>
+      </div>
 
-    <div class="video-card" data-category="gaming">
-      <video src="videos/gaming.mp4" muted loop></video>
-      <div class="overlay"><h3>Gaming Montage</h3></div>
-    </div>
+      <div class="video-card" data-category="long">
+        <video src="videos/long form video.mp4" muted loop></video>
+        <div class="overlay"><h3>Long Form Edit</h3></div>
+      </div>
 
-    <div class="video-card" data-category="color">
-      <video src="videos/color.mp4" muted loop></video>
-      <div class="overlay"><h3>Color Grading Demo</h3></div>
-    </div>
+      <div class="video-card" data-category="gaming">
+        <video src="videos/gaming.mp4" muted loop></video>
+        <div class="overlay"><h3>Gaming Montage</h3></div>
+      </div>
 
-    <div class="video-card" data-category="football">
-      <video src="videos/football.mp4" muted loop></video>
-      <div class="overlay"><h3>Football Edit</h3></div>
-    </div>
+      <div class="video-card" data-category="color">
+        <video src="videos/color.mp4" muted loop></video>
+        <div class="overlay"><h3>Color Grading Demo</h3></div>
+      </div>
 
-    <div class="video-card" data-category="anime">
-      <video src="videos/animation.mp4" muted loop></video>
-      <div class="overlay"><h3>Anime Video Edit</h3></div>
-    </div>
+      <div class="video-card" data-category="football">
+        <video src="videos/football.mp4" muted loop></video>
+        <div class="overlay"><h3>Football Edit</h3></div>
+      </div>
 
-    <div class="video-card" data-category="ads">
-      <video src="videos/E-commerce ad.mp4" muted loop></video>
-      <div class="overlay"><h3>E-commerce Ad</h3></div>
+      <div class="video-card" data-category="anime">
+        <video src="videos/animation.mp4" muted loop></video>
+        <div class="overlay"><h3>Anime Video Edit</h3></div>
+      </div>
+
+      <div class="video-card" data-category="ads">
+        <video src="videos/E-commerce ad.mp4" muted loop></video>
+        <div class="overlay"><h3>E-commerce Ad</h3></div>
+      </div>
     </div>
-  </div>
   </section>
 
   <footer>
     <p>© 2025 Editkaro.in | All Rights Reserved</p>
   </footer>
-<script>
+
+  <script>
     document.addEventListener("DOMContentLoaded", () => {
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const videoCards = document.querySelectorAll(".video-card");
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const videoCards = document.querySelectorAll(".video-card");
 
-  // Filter Functionality
-  filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      filterButtons.forEach(btn => btn.classList.remove("active"));
-      button.classList.add("active");
+      // Filter functionality
+      filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          filterButtons.forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
 
-      const category = button.getAttribute("data-category");
+          const category = button.getAttribute("data-category");
+          videoCards.forEach(card => {
+            if (category === "all" || card.getAttribute("data-category") === category) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Video Popup functionality
+      const popup = document.createElement("div");
+      popup.classList.add("video-popup");
+      popup.innerHTML = `
+        <div class="video-popup-content">
+          <span class="close-popup">&times;</span>
+          <video controls autoplay></video>
+        </div>
+      `;
+      document.body.appendChild(popup);
+
+      const popupVideo = popup.querySelector("video");
+      const closePopup = popup.querySelector(".close-popup");
+
       videoCards.forEach(card => {
-        if (category === "all" || card.getAttribute("data-category") === category) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
+        const video = card.querySelector("video");
+        card.addEventListener("click", () => {
+          popupVideo.src = video.getAttribute("src");
+          popup.classList.add("active");
+        });
+      });
+
+      closePopup.addEventListener("click", () => {
+        popup.classList.remove("active");
+        popupVideo.pause();
+        popupVideo.src = "";
       });
     });
-  });
-
-  // Video Popup Functionality
-  const popup = document.createElement("div");
-  popup.classList.add("video-popup");
-  popup.innerHTML = `
-    <div class="video-popup-content">
-      <span class="close-popup">&times;</span>
-      <video controls autoplay></video>
-    </div>
-  `;
-  document.body.appendChild(popup);
-
-  const popupVideo = popup.querySelector("video");
-  const closePopup = popup.querySelector(".close-popup");
-
-  videoCards.forEach(card => {
-    const video = card.querySelector("video");
-    card.addEventListener("click", () => {
-      popupVideo.src = video.getAttribute("src");
-      popup.classList.add("active");
-    });
-  });
-
-  closePopup.addEventListener("click", () => {
-    popup.classList.remove("active");
-    popupVideo.pause();
-    popupVideo.src = "";
-  });
-});
-
   </script>
 </body>
 </html>
-
-
